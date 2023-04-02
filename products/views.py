@@ -25,7 +25,7 @@ class CreateProduct(APIView):
         userId = user_data[0]["id"]
         businessId = business_data[0]["id"]
         if userId and businessId:
-            product = Products(user_id = userId, business_id = businessId, product_name = product_name, price = price, total_number=total_number_of_product, category_name = category)
+            product = Products(user_id = userId, business_id = businessId, product_name = product_name, price = price, quantity=total_number_of_product, category = category)
             product.save()
             return Response(data={
                 "status": status.HTTP_201_CREATED,
